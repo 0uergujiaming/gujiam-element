@@ -15,6 +15,9 @@ importers:
       '@gujiam-element/components':
         specifier: workspace:*
         version: link:packages/components
+      '@gujiam-element/core':
+        specifier: workspace:*
+        version: link:packages/core
       '@gujiam-element/utils':
         specifier: workspace:*
         version: link:packages/utils

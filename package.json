@@ -1,0 +1,27 @@
+{
+  "name": "gujiam-element",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --filter @gujiam-element/playground run dev",
+    "dev:docs": "pnpm --filter @gujiam-element/docs run dev",
+    "build:docs": "pnpm --filter @gujiam-element/docs run build"
+  },
+  "dependencies": {
+    "vue": "^3.4.37"
+  },
+  "devDependencies": {
+    "@gujiam-element/components": "workspace:*",
+    "@gujiam-element/utils": "workspace:*",
+    "@gujiam-element/core": "workspace:*",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.0.29"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

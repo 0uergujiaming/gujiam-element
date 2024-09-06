@@ -44,7 +44,7 @@ jobs:
 
     - name: Build the app
       run: pnpm run build:docs
-    - name: Run component tests
+    - name: Run test
       run: pnpm run test
         
     - name: Setup Pages

@@ -36,16 +36,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: Install Pnpm
+      run: npm install pnpm -g
+
     - name: Install dependencies
-      # Using npm ci is generally faster than running npm i because it caches dependencies
-      run: |
-        npm ci
+      run: pnpm install --frozen-lockfile
+
     - name: Build the app
       run: |
-        npm run build:docs
+        pnpm run build:docs
     - name: Run component tests
       run: |
-        npm run test
+        pnpm run test
         
     - name: Setup Pages
       uses: actions/configure-pages@v3

@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "pnpm --filter @gujiam-element/playground run dev",
     "dev:docs": "pnpm --filter @gujiam-element/docs run dev",
-    "build:docs": "pnpm --filter @gujiam-element/docs run build"
+    "build:docs": "pnpm --filter @gujiam-element/docs run build",
+    "test": "echo TODO"
   },
   "dependencies": {
     "vue": "^3.4.37"

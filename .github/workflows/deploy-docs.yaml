@@ -30,12 +30,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Setup Node
       uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
 
     - name: Install Pnpm
       run: npm install pnpm -g
@@ -44,19 +43,18 @@ jobs:
       run: pnpm install --frozen-lockfile
 
     - name: Build the app
-      run: |
-        pnpm run build:docs
+      run: pnpm run build:docs
     - name: Run component tests
-      run: |
-        pnpm run test
+      run: pnpm run test
         
     - name: Setup Pages
       uses: actions/configure-pages@v3
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
-        # Upload build directory content
-        path: 'build/'
+        name: docs
+        path: './packages/docs/.vitepress/dist'
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v1
